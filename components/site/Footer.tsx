@@ -4,6 +4,7 @@ import type { Settings } from '@/lib/types'
 export default function Footer({ locale, s }: { locale: Locale; s: Settings }) {
   const L = ui[locale]
   const socials = [['Instagram', s.instagram], ['Facebook', s.facebook], ['TikTok', s.tiktok], ['YouTube', s.youtube]].filter(([, u]) => u)
+  const myName = "Youssef Emad"
   return (
     <footer className="relative mt-32 overflow-hidden border-t border-ash bg-coal">
       <div aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blood to-transparent" />
@@ -16,7 +17,7 @@ export default function Footer({ locale, s }: { locale: Locale; s: Settings }) {
           {socials.map(([name, url]) => <li key={name}><a href={url!} target="_blank" rel="noopener noreferrer" className="link">{name}</a></li>)}
         </ul>
       </div>
-      <p className="border-t border-ash py-5 text-center text-sm text-mute">© {new Date().getFullYear()} {t(s, 'academy_name', locale)}. {L.rights}</p>
+      <p className="border-t border-ash py-5 text-center text-sm text-mute">© {new Date().getFullYear()} {myName}. {L.rights}</p>
     </footer>
   )
 }
